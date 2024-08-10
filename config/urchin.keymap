@@ -4,230 +4,230 @@
  * SPDX-License-Identifier: MIT
  */
 
-#include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/zmk/outputs.h>
+ #include <behaviors.dtsi>
+ #include <dt-bindings/zmk/keys.h>
+ #include <dt-bindings/zmk/bt.h>
+ #include <dt-bindings/zmk/outputs.h>
+ 
+ // Layer definitions
+ #define BASE 0
+ #define SYM 1
+ #define EXT 2
+ #define SYM2 3
+ #define SETTINGS 4
+ // -----------------
+ 
+ &sk {
+	 // don't release mods on other mods presses
+	 ignore-modifiers;
+ };
+ 
+ 
+ / {
+	 behaviors {
+		 // Enables holding the first mod-tap key
+		 // by performing a tap-release-hold sequence.
+		 // To use it: "&qt KEYCODE1 KEYCODE2"
+		 qt: quick_tap {
+			 compatible = "zmk,behavior-hold-tap";
+			 label = "QUICK_TAP";
+			 #binding-cells = <2>;
+			 flavor = "hold-preferred";
+			 tapping-term-ms = <200>;
+			 quick-tap-ms = <200>;
+			 bindings = <&kp>, <&kp>;
+		 };
+	 };
+	 
+	 macros {
+		 // sometimes my device thinks a modifier is being held down
+		 // pressing all modifiers fixes it.
+		 unstick: unstick {
+			 label = "ZM_unstick";
+			 compatible = "zmk,behavior-macro";
+			 #binding-cells = <0>;
+			 bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
+		 };
+ 
+		 //unicode fur Ä
+		 uc_Ae: uc_Ae {
+				 label = "UNICODE_Ae";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N3 &kp N2>
+				 , <&macro_release &kp RALT>
+					 ;
+		 }; 
 
-// Layer definitions
-#define BASE 0
-#define SYM 1
-#define EXT 2
-#define SYM2 3
-#define SETTINGS 4
-// -----------------
-
-&sk {
-	// don't release mods on other mods presses
-	ignore-modifiers;
-};
-
-
-/ {
-	behaviors {
-		// Enables holding the first mod-tap key
-		// by performing a tap-release-hold sequence.
-		// To use it: "&qt KEYCODE1 KEYCODE2"
-		qt: quick_tap {
-			compatible = "zmk,behavior-hold-tap";
-			label = "QUICK_TAP";
-			#binding-cells = <2>;
-			flavor = "hold-preferred";
-			tapping-term-ms = <200>;
-			quick-tap-ms = <200>;
-			bindings = <&kp>, <&kp>;
-		};
-	};
-	
-	macros {
-		// sometimes my device thinks a modifier is being held down
-		// pressing all modifiers fixes it.
-		unstick: unstick {
-			label = "ZM_unstick";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
-		};
-
-		//unicode fur Ä
-		uc_Ae: uc_Ae {
-		        label = "UNICODE_Ae";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N3 &kp N2>
-			    , <&macro_release &kp RALT>
-		            ;
-		}; 
-
-		//unicode fur ä
-		uc_ae: uc_ae {
-		        label = "UNICODE_ae";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N6 &kp N4>
-			    , <&macro_release &kp RALT>
-		            ;
-	    	};
-		
-		//unicode fur Ü
-		uc_Ue: uc_Ue {
-		        label = "UNICODE_Ue";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N6>
-			    , <&macro_release &kp RALT>
-		            ;
-    		}; 
-
-		//unicode fur ü
-		uc_ue: uc_ue {
-		        label = "UNICODE_ue";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N8>
-			    , <&macro_release &kp RALT>
-		            ;
-	    	};
-		
-		//unicode fur Ö
-		uc_Oe: uc_Oe {
-		        label = "UNICODE_Oe";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N0>
-			    , <&macro_release &kp RALT>
-		            ;
-		}; 
-
-		//unicode fur ö
-		uc_oe: uc_oe {
-		        label = "UNICODE_oe";
-		        compatible = "zmk,behavior-macro";
-		        #binding-cells = <0>;
-		        tap-ms = <0>;
-		        wait-ms = <0>;
-		        bindings
-		            = <&macro_press &kp RALT >
-		            , <&macro_tap &kp +>
-		            , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N2>
-			    , <&macro_release &kp RALT>
-		            ;
-		};
-
-		//unicode fur ß
-		uc_ss: uc_ss {
-			label = "UNICODE_ss";
-			compatible = "zmk,behavior-macro";
-			#binding-cells = <0>;
-			tap-ms = <0>;
-			wait-ms = <0>;
-			bindings
-				= <&macro_press &kp RALT >
-				, <&macro_tap &kp +>
-				, <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N9>
-				, <&macro_release &kp RALT>
-				;
-			};
-	};
-
-	combos {
-		compatible = "zmk,combos";
-		// both left thumb keys
-		combo_settings {
-			timeout-ms = <200>;
-			key-positions = <30 31>;
-			bindings = <&mo SETTINGS>;
-		};
-		// left index & middle fingers (home-row)
-		// hold control & space for Adobe workflow
-		combo_ctrl_space {
-			timeout-ms = <200>;
-			key-positions = <12 13>;
-			bindings = <&kp LC(SPACE)>;
-			layers = <BASE>;
-		};
-	};
-
-	keymap {
-		compatible = "zmk,keymap";
-		// Base alpha layer
-		default_layer {
-			label = "Base";
-			bindings = <
-			&kp J &kp D &kp U  &kp A  &kp X         &kp P &kp H  &kp L     &kp M   &kp W 
-			&kp C &kp T &kp I  &kp E  &kp O         &kp B &kp N  &kp R     &kp S   &kp G
-			&kp F &kp V &uc_ue &uc_ae &uc_oe        &kp Y &kp Z  &kp COMMA &kp DOT &kp K
-			     &mo EXT &qt LSHIFT SPACE		&kp ENTER &sl SYM
-			>;
-		};
-
-		// Layer 3 bone
-		sym_layer {
-			label = "Sym.";
-			bindings = <
-			&kp CARET &kp UNDER &kp LBKT &kp RBKT  &kp EXCL 		&kp LESS_THAN &kp GREATER_THAN     &kp EQUAL &kp AMPS &kp AT_SIGN
-			&kp BSLH  &kp SLASH &kp LBRC &kp RBRC  &kp ASTERISK		&kp QUESTION  &kp LEFT_PARENTHESIS &kp RPAR  &kp MINUS &kp COLON
-			&kp HASH  &kp DLLR  &kp PIPE &kp TILDE &kp GRAVE 		&kp PLUS      &kp PERCENT          &kp DQT   &kp SQT &kp SEMICOLON
-							&trans  &mo SYM2		&uc_ss &none
-			>;
-		};
-
-		// Zahlenblock und F
-		ext_layer {
-			label = "Mods";
-			bindings = <
-			&kp F10 &kp F1 &kp F2 &kp F3  &uc_Ue   		&kp PLUS  &kp N1 &kp N2 &kp N3 &kp STAR
-			&kp F11 &kp F4 &kp F5 &kp F6  &uc_Ae 		&kp MINUS &kp N4 &kp N5 &kp N6 &kp SLASH
-			&kp F12 &kp F7 &kp F8 &kp F9  &uc_Oe		&kp EQUAL &kp N7 &kp N8 &kp N9 &kp N0
-					&none &trans			&kp ENTER &sl SYM 
-			>;
-		};
-
-		// Main modifiers and arrow keys
-		symbols_2_layer {
-			label = "Sym.2";
-			bindings = <
-			&kp ESC    &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_PAUSE    	&kp PG_UP    &kp HOME &kp UP   &kp END   &kp CAPS
-			&sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 		&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
-			&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)           &kp LC(BSPC) &kp BSPC &trans   &trans    &trans
-							   &trans &kp LCTRL    		&kp ENTER  &mo FNC 
-			>;
-		};
-
-		// Used to change the keyboard's settings.
-		settings_layer {
-				label = "Sett.";
-				bindings = <
-				&bootloader &trans &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
-				&trans 	    &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
-				&trans      &trans &trans &trans     &bt BT_SEL 2               &bt BT_SEL 5 &trans &trans   &trans &trans
-								&trans &trans                   &trans &trans 
-			>;
-		};
-	};
-};
+		 //unicode fur ä
+		 uc_ae: uc_ae {
+				 label = "UNICODE_ae";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N6 &kp N4>
+				 , <&macro_release &kp RALT>
+					 ;
+			 };
+		 
+		 //unicode fur Ü
+		 uc_Ue: uc_Ue {
+				 label = "UNICODE_Ue";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N6>
+				 , <&macro_release &kp RALT>
+					 ;
+			 }; 
+ 
+		 //unicode fur ü
+		 uc_ue: uc_ue {
+				 label = "UNICODE_ue";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N8>
+				 , <&macro_release &kp RALT>
+					 ;
+			 };
+		 
+		 //unicode fur Ö
+		 uc_Oe: uc_Oe {
+				 label = "UNICODE_Oe";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N0>
+				 , <&macro_release &kp RALT>
+					 ;
+		 }; 
+ 
+		 //unicode fur ö
+		 uc_oe: uc_oe {
+				 label = "UNICODE_oe";
+				 compatible = "zmk,behavior-macro";
+				 #binding-cells = <0>;
+				 tap-ms = <0>;
+				 wait-ms = <0>;
+				 bindings
+					 = <&macro_press &kp RALT >
+					 , <&macro_tap &kp PLUS>
+					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N2>
+				 , <&macro_release &kp RALT>
+					 ;
+		 };
+ 
+		 //unicode fur ß
+		 uc_ss: uc_ss {
+			 label = "UNICODE_ss";
+			 compatible = "zmk,behavior-macro";
+			 #binding-cells = <0>;
+			 tap-ms = <0>;
+			 wait-ms = <0>;
+			 bindings
+				 = <&macro_press &kp RALT >
+				 , <&macro_tap &kp PLUS>
+				 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N9>
+				 , <&macro_release &kp RALT>
+				 ;
+			 };
+	 };
+ 
+	 combos {
+		 compatible = "zmk,combos";
+		 // both left thumb keys
+		 combo_settings {
+			 timeout-ms = <200>;
+			 key-positions = <30 31>;
+			 bindings = <&mo SETTINGS>;
+		 };
+		 // left index & middle fingers (home-row)
+		 // hold control & space for Adobe workflow
+		 combo_ctrl_space {
+			 timeout-ms = <200>;
+			 key-positions = <12 13>;
+			 bindings = <&kp LC(SPACE)>;
+			 layers = <BASE>;
+		 };
+	 };
+ 
+	 keymap {
+		 compatible = "zmk,keymap";
+		 // Base alpha layer
+		 default_layer {
+			 label = "Base";
+			 bindings = <
+			 &kp J &kp D &kp U  &kp A  &kp X         &kp P &kp H  &kp L     &kp M   &kp W 
+			 &kp C &kp T &kp I  &kp E  &kp O         &kp B &kp N  &kp R     &kp S   &kp G
+			 &kp F &kp V &uc_ue &uc_ae &uc_oe        &kp Y &kp Z  &kp COMMA &kp DOT &kp K
+				  &mo EXT &qt LSHIFT SPACE		&kp ENTER &sl SYM
+			 >;
+		 };
+ 
+		 // Layer 3 bone
+		 sym_layer {
+			 label = "Sym.";
+			 bindings = <
+			 &kp CARET &kp UNDER &kp LBKT &kp RBKT  &kp EXCL 		&kp LESS_THAN &kp GREATER_THAN     &kp EQUAL &kp AMPS &kp AT_SIGN
+			 &kp BSLH  &kp SLASH &kp LBRC &kp RBRC  &kp ASTERISK		&kp QUESTION  &kp LEFT_PARENTHESIS &kp RPAR  &kp MINUS &kp COLON
+			 &kp HASH  &kp DLLR  &kp PIPE &kp TILDE &kp GRAVE 		&kp PLUS      &kp PERCENT          &kp DQT   &kp SQT &kp SEMICOLON
+							 &trans  &mo SYM2		&uc_ss &none
+			 >;
+		 };
+ 
+		 // Zahlenblock und F
+		 ext_layer {
+			 label = "Mods";
+			 bindings = <
+			 &kp F10 &kp F1 &kp F2 &kp F3  &uc_Ue   		&kp PLUS  &kp N1 &kp N2 &kp N3 &kp STAR
+			 &kp F11 &kp F4 &kp F5 &kp F6  &uc_Ae 		&kp MINUS &kp N4 &kp N5 &kp N6 &kp SLASH
+			 &kp F12 &kp F7 &kp F8 &kp F9  &uc_Oe		&kp EQUAL &kp N7 &kp N8 &kp N9 &kp N0
+					 &none &trans			&kp ENTER &sl SYM 
+			 >;
+		 };
+ 
+		 // Main modifiers and arrow keys
+		 symbols_2_layer {
+			 label = "Sym.2";
+			 bindings = <
+			 &kp ESC    &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_PAUSE    	&kp PG_UP    &kp HOME &kp UP   &kp END   &kp CAPS
+			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 		&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
+			 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)           &kp LC(BSPC) &kp BSPC &trans   &trans    &trans
+								&trans &kp LCTRL    		&kp ENTER  &mo FNC 
+			 >;
+		 };
+ 
+		 // Used to change the keyboard's settings.
+		 settings_layer {
+				 label = "Sett.";
+				 bindings = <
+				 &bootloader &trans &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
+				 &trans 	    &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
+				 &trans      &trans &trans &trans     &bt BT_SEL 2               &bt BT_SEL 5 &trans &trans   &trans &trans
+								 &trans &trans                   &trans &trans 
+			 >;
+		 };
+	 };
+ };
