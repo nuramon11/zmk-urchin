@@ -50,8 +50,8 @@
 		 };
  
 		 //unicode fur Ä
-		 uc_Ae: uc_Ae {
-				 label = "UNICODE_Ae";
+		 uc_Aeg: uc_Aeg {
+				 label = "UNICODE_Aeg";
 				 compatible = "zmk,behavior-macro";
 				 #binding-cells = <0>;
 				 tap-ms = <0>;
@@ -80,8 +80,8 @@
 			 };
 		 
 		 //unicode fur Ü
-		 uc_Ue: uc_Ue {
-				 label = "UNICODE_Ue";
+		 uc_Ueg: uc_Ueg {
+				 label = "UNICODE_Ueg";
 				 compatible = "zmk,behavior-macro";
 				 #binding-cells = <0>;
 				 tap-ms = <0>;
@@ -110,8 +110,8 @@
 			 };
 		 
 		 //unicode fur Ö
-		 uc_Oe: uc_Oe {
-				 label = "UNICODE_Oe";
+		 uc_Oeg: uc_Oeg {
+				 label = "UNICODE_Oeg";
 				 compatible = "zmk,behavior-macro";
 				 #binding-cells = <0>;
 				 tap-ms = <0>;
@@ -201,9 +201,9 @@
 		 ext_layer {
 			 label = "Mods";
 			 bindings = <
-			 &kp F10 &kp F1 &kp F2 &kp F3  &uc_Ue   		&kp PLUS  &kp N1 &kp N2 &kp N3 &kp STAR
-			 &kp F11 &kp F4 &kp F5 &kp F6  &uc_Ae 		&kp MINUS &kp N4 &kp N5 &kp N6 &kp SLASH
-			 &kp F12 &kp F7 &kp F8 &kp F9  &uc_Oe		&kp EQUAL &kp N7 &kp N8 &kp N9 &kp N0
+			 &kp F10 &kp F1 &kp F2 &kp F3  &uc_Ueg   		&kp PLUS  &kp N1 &kp N2 &kp N3 &kp STAR
+			 &kp F11 &kp F4 &kp F5 &kp F6  &uc_Aeg 		&kp MINUS &kp N4 &kp N5 &kp N6 &kp SLASH
+			 &kp F12 &kp F7 &kp F8 &kp F9  &uc_Oeg		&kp EQUAL &kp N7 &kp N8 &kp N9 &kp N0
 					 &none &trans			&kp ENTER &sl SYM 
 			 >;
 		 };
