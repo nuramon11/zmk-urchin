@@ -60,7 +60,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N3 &kp N2>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 		 }; 
 
@@ -75,7 +75,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N6 &kp N4>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 			 };
 		 
@@ -90,7 +90,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N6>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 			 }; 
  
@@ -105,7 +105,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N8>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 			 };
 		 
@@ -120,7 +120,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N5 &kp N0>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 		 }; 
  
@@ -135,7 +135,7 @@
 					 = <&macro_press &kp RALT >
 					 , <&macro_tap &kp PLUS>
 					 , <&macro_tap &kp N1 &kp N9 &kp N5 &kp N1 &kp N8 &kp N2>
-				 , <&macro_release &kp RALT>
+				 	 , <&macro_release &kp RALT>
 					 ;
 		 };
  
@@ -182,7 +182,7 @@
 			 &kp J &kp D &kp U  &kp A  &kp X         &kp P &kp H  &kp L     &kp M   &kp W 
 			 &kp C &kp T &kp I  &kp E  &kp O         &kp B &kp N  &kp R     &kp S   &kp G
 			 &kp F &kp V &uc_ue &uc_ae &uc_oe        &kp Y &kp Z  &kp COMMA &kp DOT &kp K
-				  &mo EXT &qt LSHIFT SPACE		&kp ENTER &sl SYM
+				  	&mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
 			 >;
 		 };
  
@@ -190,10 +190,10 @@
 		 sym_layer {
 			 label = "Sym.";
 			 bindings = <
-			 &kp CARET &kp UNDER &kp LBKT &kp RBKT  &kp EXCL 		&kp LESS_THAN &kp GREATER_THAN     &kp EQUAL &kp AMPS &kp AT_SIGN
+			 &kp CARET &kp UNDER &kp LBKT &kp RBKT  &kp EXCL 			&kp LESS_THAN &kp GREATER_THAN     &kp EQUAL &kp AMPS &kp AT_SIGN
 			 &kp BSLH  &kp SLASH &kp LBRC &kp RBRC  &kp ASTERISK		&kp QUESTION  &kp LEFT_PARENTHESIS &kp RPAR  &kp MINUS &kp COLON
-			 &kp HASH  &kp DLLR  &kp PIPE &kp TILDE &kp GRAVE 		&kp PLUS      &kp PERCENT          &kp DQT   &kp SQT &kp SEMICOLON
-							 &trans  &mo SYM2		&uc_ss &none
+			 &kp HASH  &kp DLLR  &kp PIPE &kp TILDE &kp GRAVE 			&kp PLUS      &kp PERCENT          &kp DQT   &kp SQT &kp SEMICOLON
+							 &trans  &mo SYM2							&uc_ss &none
 			 >;
 		 };
  
