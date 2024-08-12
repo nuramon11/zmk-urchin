@@ -1,10 +1,4 @@
-/**
- * This file includes custom keycodes for the italian input language setting.
- * If you only type in english, you can delete this file and it's import.
- * If you wish to replace this file with your preferred language, use
- * the qmk version as reference:
- * https://github.com/qmk/qmk_firmware/tree/master/quantum/keymap_extras
-*/
+
 /*
  * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
  * │ ^ │   │   │   │   │   │   │   │   │   │   │ ß │ ´ │       │
@@ -19,9 +13,9 @@
  * └────┴────┴────┴────────────────────────┴────┴────┴────┴────┘
  */
  
-#define DE_CARET GRAVE// ^
+#define DE_CIRC GRAVE// ^
 #define DE_ss MINUS // ß 
-#define DE_AKUT EQUAL // ´
+#define DE_ACUT EQUAL // ´
 #define DE_Z Y // z
 #define DE_ue LBKT // ü
 #define DE_PlUS RBKT // +
@@ -50,8 +44,10 @@
  */
 
 #define DE_GRAD LS(GRAVE) // °
+#define DE_EXCL LS(N1) // !
 #define DE_DQT LS(N2) // ""
 #define DE_PARAGR LS(N3) // §
+#define DE_DLLR LS(N4) // $
 #define DE_AMPS LS(N6) // &
 #define DE_FSLH LS(N7) // /
 #define DE_LPAR LS(N8) // (
