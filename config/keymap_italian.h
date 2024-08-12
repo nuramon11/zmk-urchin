@@ -21,11 +21,11 @@
 #define DE_PlUS RBKT // +
 #define DE_oe SEMICOLON // ö
 #define DE_ae QUOT // ä
-#define DE_HASH NUBS // #
-#define DE_LT TILDE2 // <
+#define DE_HASH TILDE2 // #
+#define DE_LT NUBS // <
 #define DE_Y Z // y
 #define DE_COMMA KP_COMMA// ,
-#define DE_DOT KP_DOT// .
+#define DE_DOT GT// .
 #define DE_MINUS FSLH// - 
 
 // Schift
@@ -56,8 +56,8 @@
 #define DE_QMARK LS(MINUS) // ?
 #define DE_GRAVE LS(EQUAL) //  `
 #define DE_STAR LS(RBKT) // *
-#define DE_SQT LS(NUBS)// ''
-#define DE_GT LS(TILDE2) // >
+#define DE_SQT LS(TILDE2)// ''
+#define DE_GT LS(NUBS) // >
 #define DE_SEMI LS(LT) // ';'
 #define DE_COLON LS(GT) // :
 #define DE_UNDER LS(FSLH) // _
@@ -85,5 +85,5 @@
 #define DE_AT RA(Q) // @
 #define DE_EURO RA(E) // €
 #define DE_TILDE RA(RBKT) // ~
-#define DE_PIPE RA(TILDE2) // |
+#define DE_PIPE RA(NUBS) // |
 #define DE_MIKR RA(M) // µ
