@@ -48,116 +48,6 @@
 			 #binding-cells = <0>;
 			 bindings = <&kp LSHIFT &kp RSHIFT &kp LCTRL &kp RCTRL &kp LALT &kp RALT &kp LGUI &kp RGUI>;
 		 };
- 
-		 //unicode fur Ä
-		 uc_Aeg: uc_Aeg {
-				 label = "UNICODE_Aeg";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N3 &kp KP_N2>
-				 	 , <&macro_release &kp RALT>
-					 ;
-		 }; 
-
-		 //unicode fur ä
-		 uc_ae: uc_ae {
-				 label = "UNICODE_ae";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1>
-					 , <&macro_tap &kp KP_N9>
-					 , <&macro_tap &kp KP_N5>
-					 , <&macro_tap &kp KP_N1>
-					 , <&macro_tap &kp KP_N6>
-					 , <&macro_tap &kp KP_N4>
-				 	 , <&macro_release &kp RALT>
-					 ;
-			 };
-		 
-		 //unicode fur Ü
-		 uc_Ueg: uc_Ueg {
-				 label = "UNICODE_Ueg";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N5 &kp KP_N6>
-				 	 , <&macro_release &kp RALT>
-					 ;
-			 }; 
- 
-		 //unicode fur ü
-		 uc_ue: uc_ue {
-				 label = "UNICODE_ue";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N8 &kp KP_N8>
-				 	 , <&macro_release &kp RALT>
-					 ;
-			 };
-		 
-		 //unicode fur Ö
-		 uc_Oeg: uc_Oeg {
-				 label = "UNICODE_Oeg";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N5 &kp KP_N0>
-				 	 , <&macro_release &kp RALT>
-					 ;
-		 }; 
- 
-		 //unicode fur ö
-		 uc_oe: uc_oe {
-				 label = "UNICODE_oe";
-				 compatible = "zmk,behavior-macro";
-				 #binding-cells = <0>;
-				 tap-ms = <0>;
-				 wait-ms = <0>;
-				 bindings
-					 = <&macro_press &kp RALT >
-					 , <&macro_tap &kp KP_PLUS>
-					 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N8 &kp KP_N2>
-				 	 , <&macro_release &kp RALT>
-					 ;
-		 };
- 
-		 //unicode fur ß
-		 uc_ss: uc_ss {
-			 label = "UNICODE_ss";
-			 compatible = "zmk,behavior-macro";
-			 #binding-cells = <0>;
-			 tap-ms = <0>;
-			 wait-ms = <0>;
-			 bindings
-				 = <&macro_press &kp RALT >
-				 , <&macro_tap &kp KP_PLUS>
-				 , <&macro_tap &kp KP_N1 &kp KP_N9 &kp KP_N5 &kp KP_N1 &kp KP_N5 &kp KP_N9>
-				 , <&macro_release &kp RALT>
-				 ;
-			 };
 	 };
  
 	 combos {
@@ -184,10 +74,10 @@
 		 default_layer {
 			 label = "Base";
 			 bindings = <
-			 &kp J &kp D &kp U  &kp A  &kp X         &kp P &kp H  &kp L     &kp M   &kp W 
-			 &kp C &kp T &kp I  &kp E  &kp O         &kp B &kp N  &kp R     &kp S   &kp G
-			 &kp F &kp V &uc_ue &uc_ae &uc_oe        &kp Y &kp Z  &kp COMMA &kp DOT &kp K
-				  	&mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
+			 &kp J &kp D &kp U     &kp A     &kp X            &kp P    &kp H     &kp L     &kp M   &kp W 
+			 &kp C &kp T &kp I     &kp E     &kp O            &kp B    &kp N     &kp R     &kp S   &kp G
+			 &kp F &kp V &kp DE_ue &kp DE_ae &kp DE_oe        &kp DE_Y &kp DE_Z  &kp COMMA &kp DOT &kp K
+				  &mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
 			 >;
 		 };
  
@@ -195,21 +85,20 @@
 		 sym_layer {
 			 label = "Sym.";
 			 bindings = <
-			 &kp CARET &kp UNDER &kp LBKT &kp RBKT  &kp EXCL 			&kp LESS_THAN &kp GREATER_THAN     &kp EQUAL &kp AMPS &kp AT_SIGN
-			 &kp BSLH  &kp SLASH &kp LBRC &kp RBRC  &kp ASTERISK		&kp QUESTION  &kp LEFT_PARENTHESIS &kp RPAR  &kp MINUS &kp COLON
-			 &kp HASH  &kp DLLR  &kp PIPE &kp TILDE &kp GRAVE 			&kp PLUS      &kp PERCENT          &kp DQT   &kp SQT &kp SEMICOLON
-							 &trans  &mo SYM2							&uc_ss &none
-			 >;
+				&kp DE_CIRC	&kp DE_UNDER &kp DE_ACUT &kp DE_LBKT  &kp DE_RBKT       &kp DE_EXCL   &kp DE_LT   &kp DE_GT   &kp DE_AMPS  &kp Q
+				&kp DE_BSLH &kp DE_FSLH  &kp DE_DQT  &kp DE_LBRC  &kp DE_RBRC 		&kp DE_QMARK  &kp DE_LPAR &kp DE_RPAR &kp DE_MINUS &kp DE_AT
+				&kp DE_HASH &kp DE_DLLR  &kp DE_PIPE &kp DE_TILDE &kp DE_GRAVE		&kp DE_EURO   &kp PERCENT &kp DE_SEMI &kp DE_COLON &kp DE_ss															&trans &mo SYM2    		&kp DE_ss &none
+				>;
 		 };
  
 		 // Zahlenblock und F
 		 ext_layer {
 			 label = "Mods";
 			 bindings = <
-			 &kp F10 &kp F1 &kp F2 &kp F3  &uc_Ueg   	&kp PLUS  &kp N1 &kp N2 &kp N3 &kp STAR
-			 &kp F11 &kp F4 &kp F5 &kp F6  &uc_Aeg 		&kp MINUS &kp N4 &kp N5 &kp N6 &kp SLASH
-			 &kp F12 &kp F7 &kp F8 &kp F9  &uc_Oeg		&kp EQUAL &kp N7 &kp N8 &kp N9 &kp N0
-					 			&none &trans			&kp ENTER &sl SYM 
+			 &kp F10 &kp F1 &kp F2 &kp F3  &kp DE_STAR   	&kp KP_PLUS  &kp N1 &kp N2 &kp N3 &kp KP_MULTIPLY
+			 &kp F11 &kp F4 &kp F5 &kp F6  &kp DE_FSLH 	&kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp KP_DIVIDE
+			 &kp F12 &kp F7 &kp F8 &kp F9  &kp DE_DOT	&kp KP_EQUAL &kp N7 &kp N8 &kp N9 &kp N0
+					 	&none &trans		&kp ENTER &sl SYM 
 			 >;
 		 };
  
@@ -218,9 +107,9 @@
 			 label = "Sym.2";
 			 bindings = <
 			 &kp ESC    &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_PAUSE    	&kp PG_UP    &kp HOME &kp UP   &kp END   &kp CAPS
-			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 			&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
+			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 		&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
 			 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans   &trans    &trans
-								&trans &kp LCTRL    		&kp ENTER  &trans 
+							&trans &kp LCTRL    		&kp ENTER  &trans 
 			 >;
 		 };
  
@@ -229,8 +118,8 @@
 				 label = "Sett.";
 				 bindings = <
 				 &bootloader &trans &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
-				 &trans 	    &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
-				 &trans      &trans &trans &trans     &bt BT_SEL 2               &bt BT_SEL 5 &trans &trans   &trans &trans
+				 &trans      &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
+				 &trans      &trans &trans &trans     &bt BT_SEL 2              &bt BT_SEL 5 &trans &trans   &trans &trans
 								 &trans &trans                   &trans &trans 
 			 >;
 		 };
