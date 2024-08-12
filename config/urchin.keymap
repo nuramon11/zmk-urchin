@@ -74,10 +74,10 @@
 		 default_layer {
 			 label = "Base";
 			 bindings = <
-			 &kp J &kp D &kp U     &kp A     &kp X            &kp P    &kp H     &kp L     &kp M   &kp W 
-			 &kp C &kp T &kp I     &kp E     &kp O            &kp B    &kp N     &kp R     &kp S   &kp G
-			 &kp F &kp V &kp DE_ue &kp DE_ae &kp DE_oe        &kp DE_Y &kp DE_Z  &kp COMMA &kp DOT &kp K
-				  &mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
+			 &kp J &kp D &kp U     &kp A     &kp X            &kp P    &kp H     &kp L        &kp M      &kp W 
+			 &kp C &kp T &kp I     &kp E     &kp O            &kp B    &kp N     &kp R        &kp S      &kp G
+			 &kp F &kp V &kp DE_ue &kp DE_ae &kp DE_oe        &kp DE_Y &kp DE_Z  &kp DE_COMMA &kp DE_DOT &kp K
+				  	        &mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
 			 >;
 		 };
  
@@ -96,9 +96,9 @@
 			 label = "Mods";
 			 bindings = <
 			 &kp F10 &kp F1 &kp F2 &kp F3  &kp DE_STAR   	&kp KP_PLUS  &kp N1 &kp N2 &kp N3 &kp KP_MULTIPLY
-			 &kp F11 &kp F4 &kp F5 &kp F6  &kp DE_FSLH 	&kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp KP_DIVIDE
-			 &kp F12 &kp F7 &kp F8 &kp F9  &kp DE_DOT	&kp KP_EQUAL &kp N7 &kp N8 &kp N9 &kp N0
-					 	&none &trans		&kp ENTER &sl SYM 
+			 &kp F11 &kp F4 &kp F5 &kp F6  &kp DE_FSLH 		&kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp KP_DIVIDE
+			 &kp F12 &kp F7 &kp F8 &kp F9  &kp DE_DOT		&kp KP_EQUAL &kp N7 &kp N8 &kp N9 &kp N0
+					 			    &none &trans			&kp ENTER &sl SYM 
 			 >;
 		 };
  
@@ -107,9 +107,9 @@
 			 label = "Sym.2";
 			 bindings = <
 			 &kp ESC    &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_PAUSE    	&kp PG_UP    &kp HOME &kp UP   &kp END   &kp CAPS
-			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 		&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
+			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 			&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
 			 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans   &trans    &trans
-							&trans &kp LCTRL    		&kp ENTER  &trans 
+								                &trans &kp LCTRL    		&kp ENTER  &trans 
 			 >;
 		 };
  
@@ -118,8 +118,8 @@
 				 label = "Sett.";
 				 bindings = <
 				 &bootloader &trans &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
-				 &trans      &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
-				 &trans      &trans &trans &trans     &bt BT_SEL 2              &bt BT_SEL 5 &trans &trans   &trans &trans
+				 &trans 	 &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
+				 &trans      &trans &trans &trans     &bt BT_SEL 2      &bt BT_SEL 5 &trans &trans   &trans &trans
 								 &trans &trans                   &trans &trans 
 			 >;
 		 };
