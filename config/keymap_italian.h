@@ -21,11 +21,11 @@
 #define DE_PlUS RBKT // +
 #define DE_oe SEMICOLON // ö
 #define DE_ae QUOT // ä
-#define DE_HASH TILDE2 // #
+#define DE_HASH NON_US_HASH // #
 #define DE_LT NUBS // <
 #define DE_Y Z // y
-#define DE_COMMA KP_COMMA// ,
-#define DE_DOT GT// .
+#define DE_COMMA COMMA// ,
+#define DE_DOT PERIOD// .
 #define DE_MINUS FSLH// - 
 
 // Schift
