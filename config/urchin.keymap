@@ -16,16 +16,40 @@
  #define EXT 2
  #define SYM2 3
  #define SETTINGS 4
+ #define BASE_ALT 5
  // -----------------
  
  &sk {
 	 // don't release mods on other mods presses
 	 ignore-modifiers;
  };
+
  
  
  / {
 	 behaviors {
+		ml: home-row-mods-left {
+			compatible = "zmk,behavior-hold-tap";
+			bindings = <&kp>, <&kp>;
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <200>;
+			require-prior-idle-ms = <175>;
+			flavor = "balanced";
+			hold-trigger-key-positions = <30 31 32 33 5 6 7 8 9 15 16 17 18 19 25 26 27 28 29>;
+			hold-trigger-on-release;
+		};
+        mr: home-row-mods-right {
+			compatible = "zmk,behavior-hold-tap";
+			bindings = <&kp>, <&kp>;
+			#binding-cells = <2>;
+			tapping-term-ms = <280>;
+			quick-tap-ms = <200>;
+			require-prior-idle-ms = <175>;
+			flavor = "balanced";
+			hold-trigger-key-positions = <30 31 32 33 0 1 2 3 4 10 11 12 13 14 20 21 22 23 24>;
+			hold-trigger-on-release;
+		};
 		 // Enables holding the first mod-tap key
 		 // by performing a tap-release-hold sequence.
 		 // To use it: "&qt KEYCODE1 KEYCODE2"
@@ -68,17 +92,16 @@
 			 layers = <BASE>;
 		 };
 	 };
- 
 	 keymap {
 		 compatible = "zmk,keymap";
 		 // Base alpha layer
 		 default_layer {
 			 label = "Base";
 			 bindings = <
-			 &kp J &kp D &kp U     &kp A     &kp X            &kp P    &kp H     &kp L        &kp M      &kp W 
-			 &kp C &kp T &kp I     &kp E     &kp O            &kp B    &kp N     &kp R        &kp S      &kp G
-			 &kp F &kp V &kp DE_ue &kp DE_ae &kp DE_oe        &kp DE_Y &kp DE_Z  &kp DE_COMMA &kp DE_DOT &kp K
-				  &mo EXT &qt LSHIFT SPACE 		  &qt ENTER DEL &sl SYM
+			 &kp J        &kp D       &kp U        &kp A       &kp X                &kp P        &kp H       &kp L        &kp M       &kp W 
+			 &ml LCTRL C  &ml LALT T  &ml LSHFT I  &ml LGUI E  &ml HYPER O          &mr HYPER B  &mr RGUI N  &mr RSHFT R  &mr RALT S  &mr RCTRL G
+			 &kp F        &kp V       &kp DE_ue    &kp DE_ae   &kp DE_oe            &kp DE_Y     &kp DE_Z    &kp DE_COMMA &kp DE_DOT  &kp K
+				                                  &mo EXT &qt LSHIFT SPACE 		    &qt ENTER DEL &sl SYM
 			 >;
 		 };
  
@@ -89,7 +112,7 @@
 				&kp DE_CIRC	&kp DE_UNDER &kp DE_SQT  &kp DE_LBKT  &kp DE_RBKT       &kp DE_EXCL   &kp DE_LT   &kp DE_GT   &kp DE_AMPS  &kp Q
 				&kp DE_BSLH &kp DE_FSLH  &kp DE_DQT  &kp DE_LBRC  &kp DE_RBRC 		&kp DE_QMARK  &kp DE_LPAR &kp DE_RPAR &kp DE_MINUS &kp DE_AT
 				&kp DE_HASH &kp DE_DLLR  &kp DE_PIPE &kp DE_TILDE &kp DE_GRAVE		&kp DE_EURO   &kp PERCENT &kp DE_SEMI &kp DE_COLON &kp DE_ss
-									&trans &mo SYM2    		&kp DE_ss &none
+																&trans &mo SYM2    		&kp DE_ss &none
 				>;
 		 };
  
@@ -97,10 +120,10 @@
 		 ext_layer {
 			 label = "Mods";
 			 bindings = <
-			 &kp F10 &kp F1 &kp F2 &kp F3  &kp DE_STAR   		&kp KP_PLUS  &kp N1 &kp N2 &kp N3 &kp KP_MULTIPLY
+			 &kp F10 &kp F1 &kp F2 &kp F3  &kp DE_STAR   	&kp KP_PLUS  &kp N1 &kp N2 &kp N3 &kp KP_MULTIPLY
 			 &kp F11 &kp F4 &kp F5 &kp F6  &kp DE_FSLH 		&kp KP_MINUS &kp N4 &kp N5 &kp N6 &kp KP_DIVIDE
 			 &kp F12 &kp F7 &kp F8 &kp F9  &kp DE_DOT		&kp DE_EQUAL &kp N7 &kp N8 &kp N9 &kp N0
-					 	&none &trans			&kp ENTER &sl SYM 
+					 			    &none &trans			&kp ENTER &sl SYM 
 			 >;
 		 };
  
@@ -109,9 +132,9 @@
 			 label = "Sym.2";
 			 bindings = <
 			 &kp ESC    &kp C_PREV &kp C_PP   &kp C_NEXT &kp C_PAUSE    	&kp PG_UP    &kp HOME &kp UP   &kp END   &kp CAPS
-			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 		&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
+			 &sk LALT   &sk LGUI   &sk LSHIFT &sk LCTRL  &kp RALT 			&kp PG_DN    &kp LEFT &kp DOWN &kp RIGHT &kp DEL
 			 &kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp TAB    &kp LC(V)          &kp LC(BSPC) &kp BSPC &trans   &trans    &trans
-							 &trans &kp LCTRL    		&kp ENTER  &trans 
+								                &trans &kp LCTRL    		&kp ENTER  &trans 
 			 >;
 		 };
  
@@ -119,10 +142,20 @@
 		 settings_layer {
 				 label = "Sett.";
 				 bindings = <
-				 &bootloader &bt BT_CLR_ALL &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
-				 &trans      &kp F          &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
-				 &trans      &trans         &trans &trans     &bt BT_SEL 2      	&bt BT_SEL 5 &trans &none   &none &trans
-								 	&trans &trans                   &trans &trans 
+				 &bootloader &trans &trans &bt BT_CLR &bt BT_SEL 0		&bt BT_SEL 3 &trans &unstick &trans &bootloader 
+				 &trans 	 &none  &none  &trans     &bt BT_SEL 1 		&bt BT_SEL 4 &trans &trans   &trans &trans
+				 &trans      &trans &trans &trans     &bt BT_SEL 2      &bt BT_SEL 5 &trans &trans   &trans &trans
+								 &trans &trans                   &trans &trans 
+			 >;
+		 };
+		// Base alpha layer alt
+		 default_layer {
+			 label = "Base_alt";
+			 bindings = <
+			 &kp J &kp D &kp U     &kp A     &kp X            &kp P    &kp H     &kp L        &kp M      &kp W 
+			 &kp C &kp T &kp I     &kp E     &kp O            &kp B    &kp N     &kp R        &kp S      &kp G
+			 &kp F &kp V &kp DE_ue &kp DE_ae &kp DE_oe        &kp DE_Y &kp DE_Z  &kp DE_COMMA &kp DE_DOT &kp K
+				  	        &mo EXT &qt LSHIFT SPACE 		 &qt ENTER DEL &sl SYM
 			 >;
 		 };
 	 };
